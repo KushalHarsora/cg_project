@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .home {
+            width: 100vw;
+            height: 100vh;
+            background: url("bg.jpg") center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            margin-top: 25vh;
+            margin-left: 35vw;
+            font-size: 3.5em;
+            letter-spacing: 0.15em;
+            background: -webkit-linear-gradient(rgb(172, 232, 195), rgb(113, 106, 243));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 500;
+        }
+
+        .homeClass {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category {
+            padding: 5em;
+            position: absolute;
+            background-color: black;
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .category button {
+            padding: 1em 1em;
+            border: 2px solid red;
+            border-radius: 1em;
+            margin: 0 3.5em;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        .category button:hover {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <header>
+            CG Animation
+        </header>
+        <div class="homeClass">
+            <div class="category">
+                <button onclick="translation()">
+                    translation
+                </button>
+                <button onclick="rotation()">
+                    rotation
+                </button>
+                <button onclick="scaling()">
+                    scaling
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function translation() {
+            window.open("translation.html", '_blank').focus();
+        }
+        function rotation() {
+            window.open("rotation.html", '_blank').focus();
+        }
+        function scaling() {
+            window.open("scaling.html", '_blank').focus();
+        }
+    </script>
+</body>
+
+</html>

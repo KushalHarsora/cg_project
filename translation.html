@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aliceblue;
+        }
+
+        section {
+            overflow: hidden;
+            margin-left: 1em;
+        }
+
+        .verticalLine {
+            background-color: black;
+            height: 93vh;
+            width: 1.5px;
+            margin-left: 1em;
+            margin-top: 1em;
+        }
+
+        .verticalline {
+            background-color: green;
+            height: 93vh;
+            width: 1.5px;
+            margin-left: 5em;
+            margin-top: 1em;
+        }
+
+        .horizontalLine {
+            background-color: black;
+            height: 1.5px;
+            width: 95vw;
+            margin-left: 1em;
+            margin-bottom: 1em;
+        }
+
+        .horizontalline {
+            background-color: green;
+            height: 1.5px;
+            width: 93.75vw;
+            margin-left: 1em;
+            transform: translate(-1em, -5em);
+        }
+
+        .origin {
+            transform: translateY(-1em);
+            font-weight: 700;
+        }
+
+        .upArrow {
+            transform: translateY(-99vh);
+            margin-left: 0.75em;
+            font-weight: 900;
+        }
+
+        .downArrow {
+            width: 2vw;
+            height: 2vh;
+            transform: rotate(90deg);
+            margin-left: 95vw;
+            margin-top: -6.75vh;
+            font-weight: 900;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: grey;
+            width: 25vw;
+            padding: 2em 1em;
+            border: none;
+            border-radius: 1em;
+            position: absolute;
+            top: 2vh;
+            left: 73vw;
+            font-size: 1em;
+            z-index: 2;
+        }
+
+        .category div{
+            display: flex;
+            background-color: gray;
+            margin: 0.75em;
+        }
+
+        .category label{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            background: transparent;
+            color: aliceblue;
+        }
+
+        .category input{
+            width: 15vw;
+            margin-left: 1em;
+            padding: 0.5em;
+            border: none;
+            border-radius: 0.75em;
+        }
+
+        button{
+            cursor: pointer;
+            border: none;
+            padding: 0.5em;
+            border-radius: 1em;
+            margin-top: 0.5em;
+            font-size: 1.2em;
+        }
+
+        canvas{
+            z-index: 1;
+            background: transparent;
+            border: none;
+            height: calc(43.2em - 1.5px);
+            width: calc(90em - 1.5px);
+            position: absolute;
+            top: 1.5em;
+            left: 2.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="verticalLine">
+            <div class="verticalline">
+                <div class="verticalline">
+                    <div class="verticalline">
+                        <div class="verticalline">
+                            <div class="verticalline">
+                                <div class="verticalline">
+                                    <div class="verticalline">
+                                        <div class="verticalline">
+                                            <div class="verticalline">
+                                                <div class="verticalline">
+                                                    <div class="verticalline">
+                                                        <div class="verticalline">
+                                                            <div class="verticalline">
+                                                                <div class="verticalline">
+                                                                    <div class="verticalline">
+                                                                        <div class="verticalline">
+                                                                            <div class="verticalline">
+                                                                                <div class="verticalline">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="horizontalLine">
+            <div class="horizontalline">
+                <div class="horizontalline">
+                    <div class="horizontalline">
+                        <div class="horizontalline">
+                            <div class="horizontalline">
+                                <div class="horizontalline">
+                                    <div class="horizontalline">
+                                        <div class="horizontalline">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="origin">O</p>
+        <p class="upArrow">/\</p>
+        <div class="downArrow">/\</div>
+        <div class="category">
+            <div>
+                <label for="xValue">X-Value:-</label>
+                <input type="number" id="valueX">
+            </div>
+            <div>
+                <label for="yValue">Y-Value:-</label>
+                <input type="number" id="valueY">
+            </div>
+            <button onclick="hello()">
+                translate
+            </button>
+        </div>
+        <canvas id="object">
+        </canvas>
+    </section>
+    <script>
+        window.onload = hey;
+        function hey(){
+            var o = document.getElementById('object');
+            var object = o.getContext('2d');
+            object.fillStyle = "red";
+            object.fillRect(0, 100, 50, 50);
+        }
+        function hello() {
+            var x = document.getElementById('valueX').value;
+            var y = document.getElementById('valueY').value;
+            console.log(x);
+            console.log(y);
+            var o = document.getElementById('object');
+            var object = o.getContext('2d');
+            object.width = window.innerWidth;
+            console.log(window.innerWidth);
+            console.log(window.innerHeight);
+            object.translate(x, y);
+            object.fillStyle = "blue";
+            object.fillRect(x, 10 - y, 50, 50);
+        }
+    </script>
+</body>
+</html>
