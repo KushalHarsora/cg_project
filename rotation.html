@@ -67,7 +67,7 @@
             height: 2vh;
             transform: rotate(90deg);
             margin-left: 95vw;
-            margin-top: -6.75vh;
+            margin-top: -6vh;
             font-weight: 900;
         }
 
@@ -129,6 +129,13 @@
             top: 1.5em;
             left: 2.1em;
         }
+        
+        .point{
+            position: absolute;
+            top: 20.5em;
+            left: 8.5em;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 
@@ -153,6 +160,12 @@
                                                                         <div class="verticalline">
                                                                             <div class="verticalline">
                                                                                 <div class="verticalline">
+                                                                                    <div class="verticalline">
+                                                                                        <div class="verticalline">
+                                                                                            <div class="verticalline">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -181,6 +194,12 @@
                                 <div class="horizontalline">
                                     <div class="horizontalline">
                                         <div class="horizontalline">
+                                            <div class="horizontalline">
+                                                <div class="horizontalline">
+                                                    <div class="horizontalline">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -190,12 +209,13 @@
                 </div>
             </div>
         </div>
+        <div class="point">A</div>
         <p class="origin">O</p>
         <p class="upArrow">/\</p>
         <div class="downArrow">/\</div>
         <div class="category">
             <div>
-                <label for="yValue">Angle:-</label>
+                <label for="yValue">Angle rotate about A:-</label>
                 <input type="number" id="angle">
             </div>
             <button onclick="hello()">
@@ -222,7 +242,7 @@
             object.width = window.innerWidth;
             object.rotate((angle*Math.PI)/180);
             object.fillStyle = "blue";
-            object.fillRect(100, 0, 50, 50);
+            object.fillRect(95, 2, 50, 50);
         }
     </script>
 </body>
